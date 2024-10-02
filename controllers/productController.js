@@ -22,7 +22,7 @@ const getSingleProduct = async (req, res) => {
   if (!product) {
     throw new CustomError.NotFoundError(`No product with id: ${productId}`);
   }
-  res.status(StatusCodes.OK).json({ product });
+  res.status(StatusCodes.OK).json(product);
 };
 
 const updateProduct = async (req, res) => {
@@ -33,7 +33,7 @@ const updateProduct = async (req, res) => {
     runValidators: true,
   });
 
-  res.status(StatusCodes.OK).json({ product });
+  res.status(StatusCodes.OK).json(product);
 };
 
 const deleteProduct = async (req, res) => {
